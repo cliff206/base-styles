@@ -15,3 +15,49 @@ Experiements
 		padding:@spacing;
 	}
 }
+
+
+/*quick align with flex*/
+.flex {
+  display: flex;
+  
+	.align-center {
+		margin: auto;
+		align-self: center;
+	}
+  
+	.align-left {
+		margin-right: auto;
+		align-self: center;
+	}
+
+	.align-right {
+		margin-left: auto;
+		align-self: center;
+	}
+
+	.align-x-center {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.align-x-left {
+		margin-right: auto;
+	}
+
+	.align-x-right {
+		margin-left: auto;
+	}
+
+	.align-y-center {
+		align-self: center;
+	}
+
+	.align-y-top {
+		align-self: flex-start;
+	}
+
+	.align-y-bottom {
+		align-self: flex-end;
+	}
+}

@@ -922,6 +922,41 @@ Experiements
 .img-content .content {
   padding: 20px;
 }
+/*quick align with flex*/
+.flex {
+  display: flex;
+}
+.flex .align-center {
+  margin: auto;
+  align-self: center;
+}
+.flex .align-left {
+  margin-right: auto;
+  align-self: center;
+}
+.flex .align-right {
+  margin-left: auto;
+  align-self: center;
+}
+.flex .align-x-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.flex .align-x-left {
+  margin-right: auto;
+}
+.flex .align-x-right {
+  margin-left: auto;
+}
+.flex .align-y-center {
+  align-self: center;
+}
+.flex .align-y-top {
+  align-self: flex-start;
+}
+.flex .align-y-bottom {
+  align-self: flex-end;
+}
 /*
 ********************************************************************************************
 Widget Styles
