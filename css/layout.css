@@ -161,9 +161,9 @@ p {
 .white {
   color: #ffffff;
 }
-/* -----------
+/* -----------------
 Layout
----------------*/
+-------------------- */
 /*5 Column Layout*/
 .col-xs-15,
 .col-sm-15,
@@ -292,6 +292,53 @@ Layout
     width: 65%;
   }
 }
+/*quick align with flex*/
+.flex {
+  display: flex;
+}
+.flex .align-center {
+  margin: auto;
+  align-self: center;
+}
+.flex .align-left {
+  margin-right: auto;
+  align-self: center;
+}
+@media only screen and (max-width: 768px) {
+  .flex .align-left {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.flex .align-right {
+  margin-left: auto;
+  align-self: center;
+}
+@media only screen and (max-width: 768px) {
+  .flex .align-right {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.flex .align-x-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.flex .align-x-left {
+  margin-right: auto;
+}
+.flex .align-x-right {
+  margin-left: auto;
+}
+.flex .align-y-center {
+  align-self: center;
+}
+.flex .align-y-top {
+  align-self: flex-start;
+}
+.flex .align-y-bottom {
+  align-self: flex-end;
+}
 /*Resposnive Text align-center*/
 @media only screen and (max-width: 768px) {
   .col-xs-center {
@@ -315,6 +362,9 @@ Layout
     margin-left: auto;
   }
 }
+/* -----------
+Utilities
+-------------- */
 /*Borders*/
 .border-top {
   border-top: 1px solid #dedede;
@@ -353,7 +403,9 @@ Layout
 .vh50 {
   height: 50vh;
 }
-/*cta*/
+/* -----------
+cta
+-------------- */
 a {
   color: #1d9bf7;
 }
@@ -436,7 +488,7 @@ Components
 	Footer
 	Header
 	Icon flip
-	Img + Content
+	Img + Content with flex
 	navbar toggle	
 	Video - responsive embed
 *****************************************************************************************/
@@ -625,7 +677,17 @@ Img + Content
     flex-direction: column;
   }
 }
+.img-content .img {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+}
 .img-content .content {
+  -webkit-flex-grow: 3;
+  -moz-flex-grow: 3;
+  -ms-flex-grow: 3;
+  flex-grow: 3;
   padding: 20px;
 }
 /* ---------------------------------------------------------------------------------------
@@ -900,63 +962,6 @@ Page/Location Specific Styles
 /*  --------------------------------------------------------------------------------------
 Experiements
 ---------------------------------------------------------------------------------------*/
-.img-content {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-}
-@media only screen and (max-width: 768px) {
-  .img-content {
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-.img-content .content {
-  padding: 20px;
-}
-/*quick align with flex*/
-.flex {
-  display: flex;
-}
-.flex .align-center {
-  margin: auto;
-  align-self: center;
-}
-.flex .align-left {
-  margin-right: auto;
-  align-self: center;
-}
-.flex .align-right {
-  margin-left: auto;
-  align-self: center;
-}
-.flex .align-x-center {
-  margin-right: auto;
-  margin-left: auto;
-}
-.flex .align-x-left {
-  margin-right: auto;
-}
-.flex .align-x-right {
-  margin-left: auto;
-}
-.flex .align-y-center {
-  align-self: center;
-}
-.flex .align-y-top {
-  align-self: flex-start;
-}
-.flex .align-y-bottom {
-  align-self: flex-end;
-}
 /*
 ********************************************************************************************
 Widget Styles

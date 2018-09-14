@@ -99,9 +99,9 @@ p{
 
 
 
-/* -----------
+/* -----------------
 Layout
----------------*/
+-------------------- */
 /*5 Column Layout*/
 .col-xs-15,
 .col-sm-15,
@@ -241,6 +241,58 @@ Layout
 	}
 }
 
+/*quick align with flex*/
+.flex {
+  display: flex;
+  
+	.align-center {
+		margin: auto;
+		align-self: center;
+	}
+  
+	.align-left {
+		margin-right: auto;
+		align-self: center;
+		@media @mobile{
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
+
+	.align-right {
+		margin-left: auto;
+		align-self: center;
+		@media @mobile{
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
+
+	.align-x-center {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.align-x-left {
+		margin-right: auto;
+	}
+
+	.align-x-right {
+		margin-left: auto;
+	}
+
+	.align-y-center {
+		align-self: center;
+	}
+
+	.align-y-top {
+		align-self: flex-start;
+	}
+
+	.align-y-bottom {
+		align-self: flex-end;
+	}
+}
 
 /*Resposnive Text align-center*/
 .col-xs-center{
@@ -267,8 +319,12 @@ Layout
 		margin-left:auto;
 	}
 }
-/*Borders*/
 
+/* -----------
+Utilities
+-------------- */
+
+/*Borders*/
 .border-top{
 	border-top:1px solid #dedede;
 }
@@ -308,6 +364,7 @@ Layout
   	}
 }
 
+
 /*viewport height*/
 .vh100{
 	height:100vh
@@ -316,7 +373,10 @@ Layout
 	height:50vh;
 }
 
-/*cta*/
+
+/* -----------
+cta
+-------------- */
 a{
 	.linkColor(@primary-color);
 	
@@ -376,7 +436,7 @@ Components
 	Footer
 	Header
 	Icon flip
-	Img + Content
+	Img + Content with flex
 	navbar toggle	
 	Video - responsive embed
 *****************************************************************************************/
@@ -582,9 +642,10 @@ Img + Content
 		.flex-direction(column);
 	}
 	.img{
-	
+		.flex-grow(1);
 	}
 	.content{
+		.flex-grow(3);
 		padding:@spacing;
 	}
 }
