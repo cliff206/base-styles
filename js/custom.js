@@ -1,5 +1,5 @@
 /*!
-Custom JS for eFax Corporate 2017 rebuild
+Custom JS
 
 
  */
@@ -40,17 +40,4 @@ $( document ).ready(function() {
 	}
 	//ends hide left and right arrows
 
-	//scroll anchor
-	/*var $root = $('html, body');
-
-	$('a[href^="#"]').click(function() {
-	    var href = $.attr(this, 'href');
-
-	    $root.animate({
-	        scrollTop: $(href).offset().top
-	    }, 800, function () {
-	        window.location.hash = href;
-	    });
-
-	    return false;
-	});*/
+	
