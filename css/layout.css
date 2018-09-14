@@ -37,8 +37,8 @@ THIS IS SERIOUS - editing just the .css file will result in loss of all work.
 Global/helper styles
 **********************************************************************************************/
 :root {
-  /*font-size:@base-font-size;
-	font-family: @font-family;*/
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
 }
 html {
   font-size: 16px;
@@ -151,6 +151,17 @@ p {
 .text-shadow {
   text-shadow: 1px 1px 1px #666666;
 }
+/*Resposnive Text align-center*/
+@media only screen and (max-width: 768px) {
+  .col-xs-center {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .col-sm-center {
+    text-align: center;
+  }
+}
 /*Colors*/
 .blue {
   color: #1d9bf7;
@@ -196,25 +207,10 @@ Layout
     float: left;
   }
 }
-/*Helper classes*/
-.nopad {
-  padding: 0 !important;
-}
-.nomargin {
-  margin: 0;
-}
+/*spacing*/
 .row.row-spacing {
   margin-bottom: 40px;
 }
-.display-inline {
-  display: inline-block;
-}
-@media only screen and (max-width: 768px) {
-  .display-inline {
-    display: block;
-  }
-}
-/*spacing*/
 .clear {
   clear: both;
   margin-top: calc(30px);
@@ -339,29 +335,6 @@ Layout
 .flex .align-y-bottom {
   align-self: flex-end;
 }
-/*Resposnive Text align-center*/
-@media only screen and (max-width: 768px) {
-  .col-xs-center {
-    text-align: center;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .col-sm-center {
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .mobile-nofloat {
-    float: none !important;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .col-xs-center-block {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
 /* -----------
 Utilities
 -------------- */
@@ -377,6 +350,34 @@ Utilities
 }
 .border-left {
   border-left: 1px solid #dedede;
+}
+/*center on mobile*/
+@media only screen and (max-width: 768px) {
+  .col-xs-center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/*remove float on mobile*/
+@media only screen and (max-width: 768px) {
+  .mobile-nofloat {
+    float: none !important;
+  }
+}
+.nopad {
+  padding: 0 !important;
+}
+.nomargin {
+  margin: 0;
+}
+.display-inline {
+  display: inline-block;
+}
+@media only screen and (max-width: 768px) {
+  .display-inline {
+    display: block;
+  }
 }
 /*box-shadow*/
 .box-shadow {
@@ -481,20 +482,9 @@ a.cta.btn-lg {
   font-size: 1.25rem;
   line-height: calc(30px);
 }
-/*********************************************************************************************
-Components
-	Backgrounds
-	Carousel
-	Footer
-	Header
-	Icon flip
-	Img + Content with flex
-	navbar toggle	
-	Video - responsive embed
-*****************************************************************************************/
-/* ---------------------------------------------------------------------------------------
+/* ----------------
 Backgrounds
----------------------------------------------------------------------------------------  */
+--------------------  */
 /*White bg*/
 .white-bg {
   background: #ffffff;
@@ -503,6 +493,14 @@ Backgrounds
 .black-bg {
   background: #231f20;
 }
+/*********************************************************************************************
+Components
+	Carousel
+	Icon flip
+	Img + Content with flex
+	navbar toggle	
+	Video - responsive embed
+*****************************************************************************************/
 /*  --------------------------------------------------------------------------------------
 Carousel - with numbered step progress bar
 ---------------------------------------------------------------------------------------*/
