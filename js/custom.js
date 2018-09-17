@@ -41,7 +41,6 @@ var $carousel = $(this).find('.carousel-inner .item');
 //ends hide left and right arrows
 
 //vertical time line
-
 (function(){
     // Vertical Timeline - by CodyHouse.co
 	function VerticalTimeline( element ) {

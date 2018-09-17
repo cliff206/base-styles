@@ -167,7 +167,7 @@ p {
   color: #1d9bf7;
 }
 .teal {
-  color: #00c2bb;
+  color: #3dd0d1;
 }
 .white {
   color: #ffffff;
@@ -403,6 +403,9 @@ Utilities
 }
 .vh50 {
   height: 50vh;
+}
+.vh30 {
+  height: 30vh;
 }
 /* -----------
 cta
@@ -961,10 +964,24 @@ Page/Location Specific Styles
 .resume-pg {
   background: #e9f0f5;
 }
+.resume-pg .hero {
+  background: #3dd0d1;
+}
+.resume-pg .hero .flex {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 /*  --------------------------------------------------------------------------------------
 Experiements
 ---------------------------------------------------------------------------------------*/
 /*timeline styles*/
+@media only screen and (min-width: 1200px)and (max-width: 1280px), only screen and (min-width: 1280px) {
+  .cd-is-hidden {
+    visibility: hidden;
+  }
+}
 .cd-timeline {
   overflow: hidden;
   margin: 2em auto;
@@ -1047,7 +1064,7 @@ Experiements
   -webkit-box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
-.cd-timeline__img img {
+.cd-timeline__img span {
   display: block;
   width: 24px;
   height: 24px;
@@ -1198,15 +1215,16 @@ Experiements
 }
 @media only screen and (min-width: 768px) {
   /*.cd-timeline__content h2 {
-    font-size: 2rem;
-  }
-  .cd-timeline__content p {
-    font-size: 1.6rem;
-  }
+		font-size: 2rem;
+	}
+	.cd-timeline__content p {
+		font-size: 1.6rem;
+	}*/
   .cd-timeline__read-more,
   .cd-timeline__date {
-    font-size: 1.4rem;
-  }*/
+    font-size: 1rem;
+    font-weight: 700;
+  }
 }
 @media only screen and (min-width: 1200px)and (max-width: 1280px), only screen and (min-width: 1280px) {
   /* inverse bounce effect on even content blocks */
