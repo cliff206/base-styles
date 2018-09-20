@@ -384,6 +384,12 @@ Utilities
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
 }
+/*black and white overlay*/
+.bw-overlay {
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 /* align icon and text  */
 .icon-text-aligner {
   /* add this class to parent element that contains icon + text elements */
@@ -404,8 +410,18 @@ Utilities
 .vh50 {
   height: 50vh;
 }
+@media only screen and (max-width: 768px) {
+  .vh50 {
+    height: auto;
+  }
+}
 .vh30 {
   height: 30vh;
+}
+@media only screen and (max-width: 768px) {
+  .vh30 {
+    height: auto;
+  }
 }
 /* -----------
 cta
