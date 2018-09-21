@@ -12,9 +12,9 @@ Experiements
 
 .cd-timeline {
 	overflow: hidden;
-	margin: 2em auto;
+	
 	@media @desktop-xl{
-		margin-top:calc(@spacing *3);
+		
 		margin-bottom:calc(@spacing *3);
 	}
 }
@@ -120,47 +120,15 @@ Experiements
 		        transform: translateZ(0);
         &.cd-timeline__img--bounce-in {
 			visibility: visible;
-			-webkit-animation: cd-bounce-1 0.6s;
-			        animation: cd-bounce-1 0.6s;
+			-webkit-animation: cd-bounce-1 0.8s;
+			        animation: cd-bounce-1 0.8s;
 		}
 	}
 }
 
 
 
-@-webkit-keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 
-@keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 
 .cd-timeline__content {
 	position: relative;
@@ -207,8 +175,8 @@ Experiements
 
 		&.cd-timeline__content--bounce-in {
 			visibility: visible;
-			-webkit-animation: cd-bounce-2 0.6s;
-			        animation: cd-bounce-2 0.6s;
+			-webkit-animation: cd-bounce-2 0.8s;
+			        animation: cd-bounce-2 0.8s;
 		}
 	}
 }
@@ -239,7 +207,7 @@ Experiements
 
 .cd-timeline__date {
 	float: left;
-	padding: .8em 0;
+	/*padding: .8em 0;*/
 	opacity: .7;
 	@media @desktop-lg, @desktop-xl{
 		position: absolute;
@@ -268,11 +236,43 @@ Experiements
 @media @desktop-lg, @desktop-xl{
   /* inverse bounce effect on even content blocks */
   .cd-timeline__block:nth-child(even) .cd-timeline__content.cd-timeline__content--bounce-in {
-    -webkit-animation: cd-bounce-2-inverse 0.6s;
-            animation: cd-bounce-2-inverse 0.6s;
+    -webkit-animation: cd-bounce-2-inverse 0.8s;
+            animation: cd-bounce-2-inverse 0.8s;
+  }
+}
+@-webkit-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+} 
 @-webkit-keyframes cd-bounce-2 {
   0% {
     opacity: 0;
@@ -340,113 +340,261 @@ Experiements
             transform: translateX(0);
   }
 }
+/* -------------------------------- 
 
-/*vertical nav*/
-.cd-nav-trigger {
-  display: block;
-  position: fixed;
-  z-index: 2;
-  bottom: 30px;
-  right: 5%;
-}
+Hidden project bio
 
-.cd-vertical-nav {
-	position: fixed;
-	z-index: 1;
-	right: 5%;
-	bottom: 30px;
-	transform: scale(0);
-	transform-origin: right bottom;
-	transition: transform 0.2s;
-	@media @not-mobile{
-		right: 0;
-		top: 0;
-		height: 100vh;
-		width: 90px;
-		&::before{
-			/* this is the navigation background */
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(0, 0, 0, 0.8);
-			transform: translateX(100%);
-			.transition(@transition-time);
+-------------------------------- */
+
+/* -------------------------------- 
+Main components 
+-------------------------------- */
+main{
+	position:relative;
+	.transition-property( transform);
+	.transition-duration(@transition-time2);
+
+	&.slide-out{
+		/* the main element slides to the left when the author bio is visible */
+		.transform(translateX(-270px));
+		.cd-overlay{
+	  		/* the overlay layer gets visible when the author bio slides in */
+		  	display:block;
+		  	.animation(cd-fade-in @transition-time2);
 		}
-
-		.label{
-			display: block;
-	    	transform: translateX(100%);
-			.transition(@transition-time);
-		}
-	}
-	a{
 		@media @not-mobile{
-			position: relative;
-			padding: 3em 0 0;
-			margin: 1.4em auto;
-			&::before,
-			&::after{
-				/* used to create the filled circle and the background icon */
-				content: '';
-				position: absolute;
-				left: 50%;
-				transition: transform 0.4s 0s;
-			}
-			&::before{
-				/* filled circle */
-				top: 0;
-				height: 32px;
-				width: 32px;
-				border-radius: 50%;
-				background: #eaf2e3;
-				transform: translateX(-50%) scale(0.25);
-			}
-			&::after{
-				/* icon */
-				top: 8px;
-				height: 16px;
-				width: 16px;
-				background: url(../img/cd-nav-icons.svg) no-repeat;
-				transform: translateX(-50%) scale(0);
-			}
+			.transform(translateX(-600px));
+		}
+		@media @desktop-lg, @desktop-xl{
+			.transform(translateX(-800px));
 		}
 	}
 }
-.cd-vertical-nav.open {
-  transform: scale(1);
+#project-list{
+	ul{
+		list-style:none;
+		padding:0;
+	}
+	li{
+		/*margin-bottom: 2em;*/
+		border-radius: 0.25em;
+		box-shadow: 0 0 10px rgba(92, 75, 81, 0);
+		.transition(all 0.3s);
+
+	}
+	figure{
+		position:relative;
+	}
+	img{
+		display: block;
+		width: 100%;
+		border-radius: .25em .25em 0 0;
+	}
+	.img-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(92, 75, 81, 0.9);
+		opacity: 0;
+		border-radius: .25em .25em 0 0;
+		
+		.transition(opacity @transition-time2);
+		span{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			bottom: auto;
+			right: auto;
+			
+			.transform(translateX(-50%) translateY(-50%));
+			color: @white;
+		}
+	}
+	.cd-member-info{
+		height: 80px;
+		background: @white;
+		text-align: center;
+		font-weight: bold;
+		padding-top: 20px;
+		border-radius: 0 0 .25em .25em;
+	}
 }
+
 
 .no-touch{
-	.cd-vertical-nav{
-		&:hover{
-			&::before{
-				transform: translateX(0);
-			}
-			.label{
-				transform: translateX(0);
+	#project-list{
+		li{
+			&:hover{
+				box-shadow: 0 0 10px rgba(92, 75, 81, 0.3);
+				.img-overlay{
+					opacity: 1;
+				}
 			}
 		}
 	}
 }
-.touch{
-	.cd-vertical-nav{
-		&::before {
-			transform: translateX(0);
+.project-info {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 400px;
+	height: 100%;
+	overflow-y: auto;
+	/* smooth scrolling on mobile phones and tablets */
+	-webkit-overflow-scrolling: touch;
+	background: #5c4b51;
+	z-index: 1;
+	/* this how we move the author bio section off the canvas */
+	.transform(translateX(400px));
+	.transition-property( transform);
+	.transition-duration(@transition-time2);
+
+	@media @not-mobile{
+		width:600px;
+		.transform(translateX(600px));
+	}
+	@media @desktop-lg, @desktop-xl{
+		width:800px;
+		.transform(translateX(800px));
+	}
+
+	&.slide-in{
+		/* the author bio section slides in when the user clicks on the team member picture */
+		.transform(translateX(0));
+	}
+	.cd-member-bio-pic{
+		position:relative;
+		&::after{
+			/* gradient at the bottom of the image - same color of the background of the section */
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 220px;
+			background: -webkit-linear-gradient( bottom , #5c4b51, rgba(92, 75, 81, 0));
+			background: linear-gradient(to top, #5c4b51, rgba(92, 75, 81, 0));
+			
+			@media @desktop-lg, @desktop-xl{
+				height:400px;
+			}
 		}
-		.label{
-			transform: translateX(0);
+		
+	}
+	img{
+		width: 100%;
+		display: block;
+	}
+	.project-content{
+		padding:1em;
+		color:@white;
+		@media @not-mobile{
+			padding:2em;
 		}
+		@media @desktop-lg, @desktop-xl{
+			padding: 4em;
+			.transform(translateY(-80px));
+		}
+
+	}
+}
+.no-cssgradients .cd-member-bio .project-content {
+	@media @desktop-lg, @desktop-xl{
+		.transform(translateY(0));
 	}
 }
 
-@media @not-mobile{
-	.no-touch .cd-vertical-nav:hover a::before, 
-	.no-touch .cd-vertical-nav:hover a::after, 
-	.touch .cd-vertical-nav li:nth-of-type(n) a::before, 
-	.touch .cd-vertical-nav li:nth-of-type(n) a::after {
-		transform: translateX(-50%) scale(1);
+.cd-member-bio-close {
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	/*background: url("../img/cd-icon-close.svg") no-repeat center center;*/
+	/*text-indent: 100%;*/
+	white-space: nowrap;
+	z-index: 3;
+	display: none;
+	&.is-visible{
+		display: block;
+		.animation(cd-move-in 0.5s);
 	}
+	@media @desktop-lg, @desktop-xl{
+		right: 20px;
+    	top: 20px;
+	}
+}
+
+.cd-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	display: none;
+}
+/* -------------------------------- 
+
+xkeyframes 
+
+-------------------------------- */
+@-webkit-keyframes cd-fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes cd-fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes cd-fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes cd-move-in {
+	0% {
+    	-webkit-transform: translateX(100px);
+	}
+
+  	100% {
+    	-webkit-transform: translateX(0);
+  	}
+}
+@-moz-keyframes cd-move-in {
+  	0% {
+    	-moz-transform: translateX(100px);
+  	}
+
+  	100% {
+    	-moz-transform: translateX(0);
+  	}
+}
+@keyframes cd-move-in {
+  	0% {
+	.transform(translateX(100px));
+  }
+
+  100% {
+    
+    .transform (translateX(0));
+  }
 }

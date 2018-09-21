@@ -25,7 +25,7 @@ body{
 
 h1, h2, h3, h4, h5, p{ 	
 	font-family: @font-family;
-	line-height: calc(1em * @text-scale );
+	line-height: 1.5em;
 	/*@media @mobile{
 		line-height: @mobile-scale;
 	}*/
@@ -349,10 +349,13 @@ Utilities
 	box-shadow: 0 0 5px 1px rgba(0,0,0,.2);
 }
 
-/*black and white overlay*/
+/*overlay*/
 .bw-overlay{
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+}
+.purple-overlay{
+	background-color: rgba(156, 0, 255, .3);
 }
 /* align icon and text  */
 .icon-text-aligner {
@@ -394,7 +397,9 @@ cta
 -------------- */
 a{
 	.linkColor(@primary-color);
-	
+	&.white{
+		.whiteLink(@white);
+	}
 	&.cta{
 		background:@primary-color;
 		color:@white;
@@ -727,7 +732,66 @@ pano - transparent overlay on mobile
 
 	
 }
+/* ---------------------------------------------------------------------------------------
+Projects section
+--------------------------------------------------------------------------------------- */
+.flex-parent{
+	.flex-display;
+	.justify-content(space-around);
+	.flex-flow(row nowrap);
+	@media @mobile{
+		.flex-flow(column nowrap);
+		.align-items(center);
+	}
+	@media @desktop-sm{
+		.flex-flow(row wrap);
+	}
+	.flex-child{
+		.flex-grow(1);
+		.flex-basis(auto);
+		margin-left:10px;
+		margin-right:10px;
+		@media @desktop-sm{
+			.flex-grow(2);
+		} 
+		width: 265px;
+	}
+}
+/* ---------------------------------------------------------------------------------------
+Skills section
+--------------------------------------------------------------------------------------- */
+.info{
 
+}
+
+.skills-container{
+	.flex-display;
+	.justify-content(space-around);
+	.flex-flow(row nowrap);
+	@media @mobile{
+		.flex-flow(column nowrap);
+		.align-items(center);
+	}
+	@media @desktop-sm{
+		.flex-flow(row wrap);
+	}
+	.skills-list{
+		.flex-grow(1);
+		.flex-basis(auto);
+		margin-left:10px;
+		margin-right:10px;
+		@media @desktop-sm{
+			.flex-grow(2);
+		} 
+		width: 265px; 
+	}
+}
+/* ---------------------------------------------------------------------------------------
+Time Line
+--------------------------------------------------------------------------------------- */
+.timeline{
+	background:#e9f0f5;
+}
 /* ---------------------------------------------------------------------------------------
 Video - responsive embed
 ---------------------------------------------------------------------------------------*/
