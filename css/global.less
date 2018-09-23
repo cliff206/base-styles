@@ -400,6 +400,9 @@ a{
 	&.white{
 		.whiteLink(@white);
 	}
+	&.orange-link{
+		.linkColor(@orange);
+	}
 	&.cta{
 		background:@primary-color;
 		color:@white;
@@ -461,7 +464,18 @@ Backgrounds
 	background:@black;
 }
 
+/*teal bg*/
+.teal-bg{
+	background-color:@teal;
+}
 
+.dk-teal-bg{
+	background-color:@dk-teal;
+}
+/*Purple bg*/
+.purple-bg{
+	background-color:@purple;
+}
 /*********************************************************************************************
 Components
 	Carousel
@@ -710,88 +724,57 @@ navbar toggle - toggle from hamburger to "x"
 pano - transparent overlay on mobile
 --------------------------------------------------------------------------------------- */
 .pano{
-	background:url("http://via.placeholder.com/1900x400") center center no-repeat;
+	background:
+		linear-gradient(
+			    rgba(51, 63, 72, .8), 
+			    rgba(51, 63, 72, .8)
+			),
+		url("../images/hero-laptop.jpg") center center no-repeat;
 	background-size: cover;
 	padding-top:30px;
 	padding-bottom:30px;
 	
+	/*fixed to top*/
+	position:fixed;
+	width:100%;
+	
 	@media @mobile, @desktop-sm{
 		height:auto;
-		background:
-			linear-gradient(
-			    rgba(0, 0, 0, 0.5), 
-			    rgba(0, 0, 0, 0.5)
-			),
-			url("http://via.placeholder.com/1900x400") bottom center no-repeat;
-			background-size: cover;
-			padding-top:25px;
-			padding-bottom:25px;
+		padding-top:25px;
+		padding-bottom:25px;
 		.transition(.25s);
 	}
+	.logo{
+		display:none;
+	}
+	&.affix{
+		width:100%;
+		padding-top:10px;
+		padding-bottom:10px;
+		.transition(@transition-time);
+		z-index: 99;
+
+		.vh30{
+			height:auto;
+		}
+		.logo{
+			display:block;
+			.transition(@transition-time);
+		}
+		h5{
+			font-size:1rem;
+			.transition(@transition-time);
+		}
+	}
+
 
 
 	
 }
-/* ---------------------------------------------------------------------------------------
-Projects section
---------------------------------------------------------------------------------------- */
-.flex-parent{
-	.flex-display;
-	.justify-content(space-around);
-	.flex-flow(row nowrap);
-	@media @mobile{
-		.flex-flow(column nowrap);
-		.align-items(center);
-	}
-	@media @desktop-sm{
-		.flex-flow(row wrap);
-	}
-	.flex-child{
-		.flex-grow(1);
-		.flex-basis(auto);
-		margin-left:10px;
-		margin-right:10px;
-		@media @desktop-sm{
-			.flex-grow(2);
-		} 
-		width: 265px;
-	}
-}
-/* ---------------------------------------------------------------------------------------
-Skills section
---------------------------------------------------------------------------------------- */
-.info{
-
+.offset{
+	padding-top:280px;
 }
 
-.skills-container{
-	.flex-display;
-	.justify-content(space-around);
-	.flex-flow(row nowrap);
-	@media @mobile{
-		.flex-flow(column nowrap);
-		.align-items(center);
-	}
-	@media @desktop-sm{
-		.flex-flow(row wrap);
-	}
-	.skills-list{
-		.flex-grow(1);
-		.flex-basis(auto);
-		margin-left:10px;
-		margin-right:10px;
-		@media @desktop-sm{
-			.flex-grow(2);
-		} 
-		width: 265px; 
-	}
-}
-/* ---------------------------------------------------------------------------------------
-Time Line
---------------------------------------------------------------------------------------- */
-.timeline{
-	background:#e9f0f5;
-}
 /* ---------------------------------------------------------------------------------------
 Video - responsive embed
 ---------------------------------------------------------------------------------------*/
