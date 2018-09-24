@@ -406,36 +406,6 @@ Utilities
   color: inherit;
   flex-shrink: 0;
 }
-/*viewport height*/
-.vh100 {
-  height: 100vh;
-}
-.vh50 {
-  height: 50vh;
-}
-@media only screen and (max-width: 768px) {
-  .vh50 {
-    height: auto;
-  }
-}
-@media only screen and (min-width: 1500px) {
-  .vh50 {
-    height: auto;
-  }
-}
-.vh30 {
-  height: 30vh;
-}
-@media only screen and (max-width: 768px) {
-  .vh30 {
-    height: auto;
-  }
-}
-@media only screen and (min-width: 1500px) {
-  .vh30 {
-    height: auto;
-  }
-}
 /* -----------
 cta
 -------------- */
@@ -827,6 +797,34 @@ pano - transparent overlay on mobile
 .pano .logo {
   display: none;
 }
+.pano .vh30 {
+  height: auto;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -ms-transition: 0.25s;
+  transition: 0.25s;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 1200px)and (max-width: 1280px), only screen and (min-width: 1280px) {
+  .pano .vh30 {
+    height: 20vh;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    -ms-transition: 0.25s;
+    transition: 0.25s;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .pano .vh30 {
+    height: 10vh;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    -ms-transition: 0.25s;
+    transition: 0.25s;
+  }
+}
 .pano.affix {
   width: 100%;
   padding-top: 10px;
@@ -866,11 +864,16 @@ pano - transparent overlay on mobile
   }
 }
 .offset {
-  padding-top: 280px;
+  padding-top: 130px;
 }
 @media only screen and (max-width: 768px) {
   .offset {
     padding-top: 100px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 1200px)and (max-width: 1280px), only screen and (min-width: 1280px) {
+  .offset {
+    padding-top: 280px;
   }
 }
 @media only screen and (min-width: 1500px) {

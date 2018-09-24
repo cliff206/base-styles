@@ -374,29 +374,6 @@ Utilities
 }
 
 
-/*viewport height*/
-.vh100{
-	height:100vh
-}
-.vh50{
-	height:50vh;
-	@media @mobile{
-		height:auto;
-	}
-	@media @desktop-wide{
-		height:auto;
-	}
-}
-.vh30{
-	height:30vh;
-	@media @mobile{
-		height:auto;
-	}
-	@media @desktop-wide{
-		height:auto;
-	}
-}
-
 
 /* -----------
 cta
@@ -754,6 +731,20 @@ pano - transparent overlay on mobile
 		display:none;
 	
 	}
+	.vh30{
+		height:auto;
+		.transition(@transition-time);
+		@media @desktop-md, @desktop-lg, @desktop-xl{
+			height:20vh;
+			.transition(@transition-time);
+		}
+		@media @desktop-wide{
+			height:10vh;
+			.transition(@transition-time);
+		}
+	}
+
+	
 	&.affix{
 		width:100%;
 		padding-top:10px;
@@ -786,9 +777,12 @@ pano - transparent overlay on mobile
 	
 }
 .offset{
-	padding-top:280px;
+	padding-top:130px;
 	@media @mobile{
 		padding-top:100px;
+	}
+	@media @desktop-md, @desktop-lg, @desktop-xl{
+		padding-top:280px;
 	}
 	@media @desktop-wide{
 		padding-top:150px;
