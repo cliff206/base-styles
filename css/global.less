@@ -383,10 +383,16 @@ Utilities
 	@media @mobile{
 		height:auto;
 	}
+	@media @desktop-wide{
+		height:auto;
+	}
 }
 .vh30{
 	height:30vh;
 	@media @mobile{
+		height:auto;
+	}
+	@media @desktop-wide{
 		height:auto;
 	}
 }
@@ -769,6 +775,9 @@ pano - transparent overlay on mobile
 		h3{
 			
 			font-size:4vw;
+			@media @desktop-wide{
+				font-size:3vw;
+			}
 		}
 	}
 
@@ -780,6 +789,9 @@ pano - transparent overlay on mobile
 	padding-top:280px;
 	@media @mobile{
 		padding-top:100px;
+	}
+	@media @desktop-wide{
+		padding-top:150px;
 	}
 }
 

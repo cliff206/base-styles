@@ -48,7 +48,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #231f20;
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1500px) {
   .container {
     width: 1410px;
   }
@@ -418,10 +418,20 @@ Utilities
     height: auto;
   }
 }
+@media only screen and (min-width: 1500px) {
+  .vh50 {
+    height: auto;
+  }
+}
 .vh30 {
   height: 30vh;
 }
 @media only screen and (max-width: 768px) {
+  .vh30 {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 1500px) {
   .vh30 {
     height: auto;
   }
@@ -850,12 +860,22 @@ pano - transparent overlay on mobile
 .pano.affix h3 {
   font-size: 4vw;
 }
+@media only screen and (min-width: 1500px) {
+  .pano.affix h3 {
+    font-size: 3vw;
+  }
+}
 .offset {
   padding-top: 280px;
 }
 @media only screen and (max-width: 768px) {
   .offset {
     padding-top: 100px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .offset {
+    padding-top: 150px;
   }
 }
 /* ---------------------------------------------------------------------------------------
@@ -1107,6 +1127,11 @@ Page/Location Specific Styles
 .about .name h1 {
   font-size: 8vw;
   line-height: 100%;
+}
+@media only screen and (min-width: 1500px) {
+  .about .name h1 {
+    font-size: 6vw;
+  }
 }
 /* ---------------------------------------------------------------------------------------
 Projects section
