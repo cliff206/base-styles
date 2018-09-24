@@ -847,8 +847,16 @@ pano - transparent overlay on mobile
   -ms-transition: 0.25s;
   transition: 0.25s;
 }
+.pano.affix h3 {
+  font-size: 4vw;
+}
 .offset {
   padding-top: 280px;
+}
+@media only screen and (max-width: 768px) {
+  .offset {
+    padding-top: 100px;
+  }
 }
 /* ---------------------------------------------------------------------------------------
 Video - responsive embed
@@ -1097,18 +1105,8 @@ Page/Location Specific Styles
   width: 100%;
 }
 .about .name h1 {
-  font-size: calc(6.25rem);
+  font-size: 8vw;
   line-height: 100%;
-}
-@media only screen and (max-width: 768px) {
-  .about .name h1 {
-    font-size: calc(3.45rem);
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .about .name h1 {
-    font-size: calc(4.6rem);
-  }
 }
 /* ---------------------------------------------------------------------------------------
 Projects section

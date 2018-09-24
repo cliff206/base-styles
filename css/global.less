@@ -746,6 +746,7 @@ pano - transparent overlay on mobile
 	}
 	.logo{
 		display:none;
+	
 	}
 	&.affix{
 		width:100%;
@@ -765,6 +766,10 @@ pano - transparent overlay on mobile
 			font-size:1rem;
 			.transition(@transition-time);
 		}
+		h3{
+			
+			font-size:4vw;
+		}
 	}
 
 
@@ -773,6 +778,9 @@ pano - transparent overlay on mobile
 }
 .offset{
 	padding-top:280px;
+	@media @mobile{
+		padding-top:100px;
+	}
 }
 
 /* ---------------------------------------------------------------------------------------
