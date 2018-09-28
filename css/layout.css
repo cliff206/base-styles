@@ -856,7 +856,7 @@ pano - transparent overlay on mobile
   transition: 0.25s;
 }
 .pano.affix h3 {
-  font-size: 4vw;
+  font-size: 2vw;
 }
 @media only screen and (min-width: 1500px) {
   .pano.affix h3 {
